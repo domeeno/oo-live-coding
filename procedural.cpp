@@ -45,16 +45,5 @@ void consume(Circle &winner, Circle &dinner) {
 }
 
 int main(int argc, char *argv[]) {
-  Circle c1{195, 194, 40};
-  Circle c2{204, 204, 20};
-
-  printCircle(c1);
-  printCircle(c2);
-
-  consume(c1, c2);
-
-  printCircle(c1);
-  printCircle(c2);
-
   return 0;
 }
