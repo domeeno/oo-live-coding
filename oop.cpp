@@ -1,25 +1,31 @@
 #include <iostream>
 
-class Circle {
-private:
+struct Pos {
   // center
   float x;
   float y;
+};
+
+class Circle {
+private:
+  Pos pos;
 
   // radius
   float r;
 
 public:
-  Circle(float inx, float iny, float inr) : x(inx), y(iny), r(inr) {}
+  Circle(float inx, float iny, float inr) : r(inr) {
+    pos = Pos{inx, iny};
+  }
 
   void print() {
-    std::cout << "x: " << this->x << "y: " << this->y << "\n";
+    std::cout << "x: " << this->pos.x << "y: " << this->pos.y << "\n";
     std::cout << "r: " << this->r << "\n";
   }
 
   bool collide(Circle &other) {
-    float dx = this->x - other.x;
-    float dy = this->y - other.y;
+    float dx = this->pos.x - other.getX();
+    float dy = this->pos.y - other.getY();
 
     float distanceSquared = dx * dx + dy * dy;
 
@@ -32,8 +38,8 @@ public:
 
   void respawn() {
     r = 1;
-    x = 100;
-    y = 100;
+    pos.x = 100;
+    pos.y = 100;
   }
 
   void consume(Circle &dinner) {
@@ -46,13 +52,20 @@ public:
       dinner.respawn();
     }
   }
+  
+  // getters
+  float getX() {
+    return pos.x;
+  };
+  float getY() {
+    return pos.y;
+  };
 };
 
 int main(int argc, char *argv[]) {
   Circle c1{195, 194, 40};
   Circle c2{204, 204, 20};
 
-  
 
   c1.print();
   c2.print();
