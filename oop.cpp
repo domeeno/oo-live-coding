@@ -65,10 +65,12 @@ public:
 int main(int argc, char *argv[]) {
   Circle c1{195, 194, 40};
   Circle c2{204, 204, 20};
+  Circle c3{25, 11, 20};
 
 
   c1.print();
   c2.print();
+  c3.print();
 
   c1.consume(c2);
 
