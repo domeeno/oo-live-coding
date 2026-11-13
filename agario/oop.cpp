@@ -2,7 +2,7 @@
 
 class Circle {
 private:
-  // center
+  // origin 
   float x;
   float y;
 
