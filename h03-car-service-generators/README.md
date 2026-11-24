@@ -1,5 +1,9 @@
 # Car generator for the Car Service lab
 
+> HEADS UP: if you are reading this on your local machine, your IDE might support or might not MARKDOWN PREVIEW.
+> For convenience: https://github.com/domeeno/oo-live-coding/tree/main/h03-car-service-generators README previews are
+> supported in github. Open the above URL, for easier reading, cheers - oop lectirer.
+
 Pick **one** generator: `py/generator.py` or `cpp/generator.cpp`. Both make the same cars from
 the same seed, and neither needs a library.
 
